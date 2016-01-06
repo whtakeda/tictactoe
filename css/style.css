@@ -14,8 +14,8 @@ body {
 	background:#c0c0c0;
 	/* different parameters than the other bevels */
 	-moz-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
-    -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
-    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+	box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 }
 
 .row {
@@ -39,14 +39,14 @@ body {
 }
 
 .bevel{
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 1s;
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+	-webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+	animation-name: example;
+	animation-duration: 1s;
 	animation-iteration-count:0;
 	-moz-box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .5), inset -4px -4px 4px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, .5), inset -4px -4px 2px rgba(0, 0, 0, .5);
-    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .5), inset -4px -4px 4px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, .5), inset -4px -4px 2px rgba(0, 0, 0, .5);
+	box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .5), inset -4px -4px 4px rgba(0, 0, 0, .5);
 }
 
 .div-clear {
@@ -79,9 +79,7 @@ body {
 	position: relative;
 	display:inline-block;
 	vertical-align: middle;
-	min-width:1000px;
-	left:50%;
-	margin-left:-500px;
+	width: 100%;
 	padding-top:20px;
 	text-align:center;
 }
@@ -179,3 +177,7 @@ body {
 #square22 { border-right:1px solid #000000; }
 #square23 { border-right:1px solid #000000; }
 #square24 { border-right:1px solid #000000; }
+
+.boardsize {
+	display:inline-block;
+}

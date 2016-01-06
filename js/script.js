@@ -2,9 +2,6 @@ var turncnt; // tracks the total number of turns used (by both players)]
 var opponent; // tracks whether opponent is computer or live player
 var p1Image = "images/tictac.png";
 var p2Image = "images/to.png";
-//var board = [["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""]];
-//var board = [["","","","",""],["","","","",""],["","","","",""],["","","","",""]];
-//var board = [["","","",""],["","","",""],["","","",""]];
 var board = [];
 var turnX;
 var gameOn;
@@ -14,8 +11,8 @@ var p1Icon = document.getElementsByName("p1Icon");
 var title = document.getElementById("title");
 var status1 = document.getElementById("status");
 var gameboard = document.getElementById("gameboard");
-var boardwidth = 5;
-var boardlength = 5;
+var boardwidth;
+var boardlength;
 var maxturns;
 
 // eventListener function
@@ -242,11 +239,40 @@ function highlightWinner(start,direction)
 // this section does the setup/cleanup
 ///////////////////////////////////////////
 
-function initializeGame()
+function drawBoard()
+{
+	var i,j;
+	var board = "";
+
+	for (i=1; i<=boardwidth; i++)
+	{
+		board += "<div class='row'>"
+		for (j=1; j<=boardlength; j++)
+		{
+			board += "<div class='square bevel' id='square" + (((i-1)*boardwidth) + j) + "'></div>";
+		}
+		board += "</div><div class='div-clear'></div>"
+	}
+	console.log(board)
+	document.getElementById('gameboard').innerHTML = board;
+			// <div class="row">
+			// 	<div class="square bevel" id="square1"></div>
+			// 	<div class="square bevel" id="square2"></div>
+			// 	<div class="square bevel" id="square3"></div>
+			// 	<div class="square bevel" id="square4"></div>
+			// 	<div class="square bevel" id="square5"></div>
+			// </div>
+			// <div class="div-clear"></div>
+
+}
+
+function initializeGame(boardsize)
 {
 	var cnt=1;
 	var i, j;
-
+	boardwidth = boardlength = boardsize;
+	drawBoard();
+console.log('initializing game with board size ' +  boardsize)
 	opponent = "player";
 	for (i=0; i<boardwidth; i++)
 	{
@@ -260,6 +286,10 @@ function initializeGame()
 
 
 	// add the same eventListener for both mouseup and mouseleave in case the user clicks down and moves off the div before clicking up
+	for (var i=0; i< 3;i++)
+	{
+		boardSize[i].addEventListener("click", function(event){initializeGame(event.target.value)})
+	}
 	reset.addEventListener("click", resetBoard);
 	reset.addEventListener("mousedown", simulateMouseDown);
 	reset.addEventListener("mouseup", simulateMouseUp);
@@ -387,6 +417,6 @@ function simulateMouseUp(event)
 // main
 /////////////////////////////////////////
 
-initializeGame();
+initializeGame(3);
 
 
