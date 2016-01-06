@@ -253,17 +253,7 @@ function drawBoard()
 		}
 		board += "</div><div class='div-clear'></div>"
 	}
-	console.log(board)
 	document.getElementById('gameboard').innerHTML = board;
-			// <div class="row">
-			// 	<div class="square bevel" id="square1"></div>
-			// 	<div class="square bevel" id="square2"></div>
-			// 	<div class="square bevel" id="square3"></div>
-			// 	<div class="square bevel" id="square4"></div>
-			// 	<div class="square bevel" id="square5"></div>
-			// </div>
-			// <div class="div-clear"></div>
-
 }
 
 function initializeGame(boardsize)
@@ -272,7 +262,6 @@ function initializeGame(boardsize)
 	var i, j;
 	boardwidth = boardlength = boardsize;
 	drawBoard();
-console.log('initializing game with board size ' +  boardsize)
 	opponent = "player";
 	for (i=0; i<boardwidth; i++)
 	{
