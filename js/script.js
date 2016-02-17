@@ -263,6 +263,7 @@ function initializeGame(boardsize)
 	boardwidth = boardlength = boardsize;
 	drawBoard();
 	opponent = "player";
+	board = [];
 	for (i=0; i<boardwidth; i++)
 	{
 		board[i] = [];
@@ -277,7 +278,7 @@ function initializeGame(boardsize)
 	// add the same eventListener for both mouseup and mouseleave in case the user clicks down and moves off the div before clicking up
 	for (var i=0; i< 3;i++)
 	{
-		boardSize[i].addEventListener("click", function(event){initializeGame(event.target.value)})
+		boardSize[i].addEventListener("click", function(event){initializeGame(event.target.value);resetBoard()})
 	}
 	reset.addEventListener("click", resetBoard);
 	reset.addEventListener("mousedown", simulateMouseDown);
